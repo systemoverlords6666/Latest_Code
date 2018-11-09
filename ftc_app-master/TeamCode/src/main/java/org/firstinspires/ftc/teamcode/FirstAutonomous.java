@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
-o
+
 @Autonomous (name = "First Autonomous")
 public class FirstAutonomous extends LinearOpMode {
 
@@ -30,7 +30,7 @@ public class FirstAutonomous extends LinearOpMode {
 
         lm.setPower(.4);
         rm.setPower(-.4);
-        sleep(3000);3
+        sleep(3000);
 
         lm.setPower(0);
         rm.setPower(0);
