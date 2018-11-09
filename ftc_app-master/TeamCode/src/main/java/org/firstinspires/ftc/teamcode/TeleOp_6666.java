@@ -12,19 +12,19 @@ public class TeleOp_6666 extends OpMode{
 
     DcMotor lm;
     DcMotor rm;
-    DcMotor cm;
+    DcMotor up;
     Servo hs;
 
     double leftwheelpower;
     double rightwheelpower;
-    double clawpower;
+    double upmotor;
     boolean hookservo;
 
     @Override
     public void init() {
         lm = hardwareMap.dcMotor.get("lm");
         rm = hardwareMap.dcMotor.get("rm");
-        cm = hardwareMap.dcMotor.get("cm");
+        up = hardwareMap.dcMotor.get("cm");
         hs = hardwareMap.servo.get("hs");
 
 
@@ -36,7 +36,7 @@ public class TeleOp_6666 extends OpMode{
     public void loop() {
         leftwheelpower = gamepad1.left_stick_y;
         rightwheelpower = gamepad1.right_stick_y;
-        clawpower = gamepad2.left_stick_y;
+        upmotor = gamepad2.left_stick_y;
         hookservo = gamepad2.a;
         hookservo = gamepad2.b;
 
@@ -55,7 +55,7 @@ public class TeleOp_6666 extends OpMode{
 
         lm.setPower(leftwheelpower);
         rm.setPower(rightwheelpower);
-        cm.setPower(clawpower);
+        up.setPower(upmotor);
 
     }
 
