@@ -13,7 +13,7 @@ public class FirstAutonomous extends LinearOpMode {
     DcMotor rm;
 
     @Override
-    public void runOpMode() throws InterruptedException {
+    public void runOpMode() throws InterruptedException{
         lm = hardwareMap.dcMotor.get("lm");
         rm = hardwareMap.dcMotor.get("rm");
 

@@ -32,9 +32,10 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 
 /**
  * This file illustrates the concept of driving a path based on time.
@@ -58,7 +59,6 @@ import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
  */
 
 @Autonomous(name="AutonomousPeriod: AutonomousPeriod", group="AutonomousPeriod")
-
 public class AutonomousPeriod extends LinearOpMode {
 
     /* Declare OpMode members. */
@@ -82,6 +82,11 @@ public class AutonomousPeriod extends LinearOpMode {
 
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
+
+        robot.up.setPower(1);
+        sleep(1000);
+        robot.rm.setPower(1);
+        robot.lm.setPower(.5);
 
 
 
