@@ -30,10 +30,8 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 
@@ -58,8 +56,8 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="AutonomousPeriod: AutonomousPeriod", group="AutonomousPeriod")
-public class AutonomousPeriod extends LinearOpMode {
+@Autonomous(name="AutonomousGroundPeriod: AutonomousGroundPeriod", group="AutonomousGroundPeriod")
+public class AutonomousGroundPeriod extends LinearOpMode {
 
     /* Declare OpMode members. */
     HardwarePushbot         robot   = new HardwarePushbot();   // Use a Pushbot's hardware
@@ -85,11 +83,7 @@ public class AutonomousPeriod extends LinearOpMode {
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
 
-        robot.up.setPower(.5);
-        sleep(2500);
-        robot.up.setPower(0);
-        sleep(1100);
-        robot.up.setPower(-1);
+
         robot.rm.setPower(.4);
         robot.lm.setPower(.4);
 
