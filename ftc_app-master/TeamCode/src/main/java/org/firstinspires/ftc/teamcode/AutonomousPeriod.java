@@ -83,8 +83,9 @@ public class AutonomousPeriod extends LinearOpMode {
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
 
-        robot.up.setPower(1);
-        sleep(1000);
+        robot.up.setPower(.5);
+        sleep(1500);
+        robot.rm.setPower(-);
         robot.rm.setPower(1);
         robot.lm.setPower(.5);
 
