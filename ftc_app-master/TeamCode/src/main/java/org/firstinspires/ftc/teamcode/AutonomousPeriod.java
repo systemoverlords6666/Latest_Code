@@ -85,7 +85,9 @@ public class AutonomousPeriod extends LinearOpMode {
 
         robot.up.setPower(.5);
         sleep(1500);
-        robot.rm.setPower(-);
+        robot.rm.setPower(-.5);
+        robot.lm.setPower(-.5);
+        sleep(1500);
         robot.rm.setPower(1);
         robot.lm.setPower(.5);
 
