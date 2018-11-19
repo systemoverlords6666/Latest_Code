@@ -17,6 +17,6 @@ public class Encoders extends LinearOpMode
         leftmotor = hardwareMap.dcMotor.get("leftmotor");
         rightmotor = hardwareMap.dcMotor.get("rightmotor");
 
-        leftmotor.setMode(DcMotorController);
+        leftmotor.setMode(DcMotorController.);
     }
 }
