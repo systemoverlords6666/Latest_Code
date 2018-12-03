@@ -85,6 +85,12 @@ public class AutonomousPeriod extends LinearOpMode {
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
 
+        robot.color_sensor.enableLed(true);  // turn the light on for objects, turn if off sensing color of lit objects
+
+        while (opModeIsActive()) {
+            telemetry.addData("Color Number", robot.color_sensor.readUnsignedByte()
+        }
+
         robot.up.setPower(.5);
         sleep(2500);
         robot.up.setPower(0);
