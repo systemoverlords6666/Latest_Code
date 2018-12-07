@@ -29,6 +29,10 @@
 
 package org.firstinspires.ftc.teamcode;
 
+import android.app.Activity;
+import android.graphics.Color;
+import android.view.View;
+
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -69,7 +73,9 @@ public class AutonomousPeriod extends LinearOpMode {
 
     @Override
     public void runOpMode() {
-
+        final double SCALE_FACTOR = 255;
+        float hsvValues[] = {0F, 0F, 0F};
+        final float values[] = hsvValues;
         /*
          * Initialize the drive system variables.
          * The init() method of the hardware class does all the work here
@@ -81,6 +87,8 @@ public class AutonomousPeriod extends LinearOpMode {
         // Send telemetry message to signify robot waiting;
         telemetry.addData("Status", "Ready to run");    //
         telemetry.update();
+        int relativeLayoutId = hardwareMap.appContext.getResources().getIdentifier("RelativeLayout", "id", hardwareMap.appContext.getPackageName());
+        final View relativeLayout = ((Activity) hardwareMap.appContext).findViewById(relativeLayoutId);
 
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
@@ -88,7 +96,22 @@ public class AutonomousPeriod extends LinearOpMode {
         robot.color_sensor.enableLed(true);  // turn the light on for objects, turn if off sensing color of lit objects
 
         while (opModeIsActive()) {
-            telemetry.addData("Color Number", robot.color_sensor.readUnsignedByte()
+            telemetry.addData("Color Number", robot.color_sensor.red());
+            Color.RGBToHSV((int) (robot.color_sensor.red() * SCALE_FACTOR),
+                    (int) (robot.color_sensor.green() * SCALE_FACTOR),
+                    (int) (robot.color_sensor.blue() * SCALE_FACTOR),
+                    hsvValues);
+            telemetry.addData("Alpha", robot.color_sensor.alpha());
+            telemetry.addData("Red  ", robot.color_sensor.red());
+            telemetry.addData("Green", robot.color_sensor.green());
+            telemetry.addData("Blue ", robot.color_sensor.blue());
+            telemetry.addData("Hue", hsvValues[0]);
+            relativeLayout.post(new Runnable() {
+                public void run() {
+                    relativeLayout.setBackgroundColor(Color.HSVToColor(Color.YELLOW, values));
+                }
+            });
+
         }
 
         robot.up.setPower(.5);

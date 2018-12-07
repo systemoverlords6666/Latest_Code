@@ -33,7 +33,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
-import com.qualcomm.hardware.rev.Rev2mDistanceSensor;
+import com.qualcomm.robotcore.hardware.ColorSensor;
 
 
 /**
@@ -60,7 +60,7 @@ public class HardwarePushbot
     public DcMotor  up = null;
     public DcMotor  lm = null;
     public DcMotor  rm = null;
-    public  Rev2mDistanceSensor color_sensor;
+    public ColorSensor color_sensor;
 
 
 
@@ -99,7 +99,7 @@ public class HardwarePushbot
         lm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        color_sensor = hwMap.get(Rev2mDistanceSensor.class,"sensor_color");
+        color_sensor = hwMap.get(ColorSensor.class,"sensor_color");
         // Define and initialize ALL installed servos.
 
 
