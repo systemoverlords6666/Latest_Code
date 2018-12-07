@@ -52,7 +52,7 @@ import com.qualcomm.robotcore.hardware.ColorSensor;
  * Servo channel:  Servo to open left claw:  "left_hand"
  * Servo channel:  Servo to open right claw: "right_hand"
  */
-public class HardwarePushbot
+public class    HardwarePushbot
 {
     /* Public OpMode members. */
 
@@ -92,7 +92,7 @@ public class HardwarePushbot
         up.setPower(0);
         rm.setPower(0);
         lm.setPower(0);
-        // Set all motors to run without encoders.
+        // Set all motors to run with encoders.
         // May want to use RUN_USING_ENCODERS if encoders are installed.
 
         up.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
@@ -107,6 +107,8 @@ public class HardwarePushbot
         up = hwMap.get(DcMotor.class, "up");
         lm = hwMap.get(DcMotor.class, "lm");
         rm = hwMap.get(DcMotor.class, "rm");
+
+
 
 
 

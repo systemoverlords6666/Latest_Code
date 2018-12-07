@@ -27,12 +27,12 @@ public class Vuforia extends LinearOpMode {
         rm.setDirection(DcMotor.Direction.REVERSE);
         VuforiaBase.TrackingResults RedResults;
 
-/*
+
         lm = hardwareMap.dcMotor.get("lm");
         rm = hardwareMap.dcMotor.get("rm");
         up = hardwareMap.dcMotor.get("up");
 
-*/
+
         vuforiaRoverRuckus = new VuforiaRoverRuckus();
 
         // Put initialization blocks here.
