@@ -24,8 +24,10 @@ public class FirstAutonomous extends LinearOpMode {
         up.setPower(.4);
         sleep(3000);
 
-        lm.setPower(.4);
-        rm.setPower(.4);
+
+
+        lm.setPower(.6);
+        rm.setPower(.6);
         sleep(5000);
 
 
