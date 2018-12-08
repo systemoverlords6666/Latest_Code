@@ -12,11 +12,11 @@ public class Vuforia extends LinearOpMode {
 
     private VuforiaRoverRuckus vuforiaRoverRuckus;
 
-/*
+
     DcMotor lm;
     DcMotor rm;
     DcMotor up;
-*/
+
 
     @Override
     public void runOpMode() {
