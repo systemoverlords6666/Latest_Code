@@ -33,8 +33,6 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
-import com.qualcomm.robotcore.hardware.ColorSensor;
-
 
 /**
  * This is NOT an opmode.
@@ -60,8 +58,6 @@ public class HardwarePushbot
     public DcMotor  up = null;
     public DcMotor  lm = null;
     public DcMotor  rm = null;
-    public ColorSensor color_sensor;
-
 
 
 
@@ -98,11 +94,7 @@ public class HardwarePushbot
         up.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         lm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-
-        color_sensor = hwMap.get(ColorSensor.class,"sensor_color");
         // Define and initialize ALL installed servos.
-
-
 
         up = hwMap.get(DcMotor.class, "up");
         lm = hwMap.get(DcMotor.class, "lm");

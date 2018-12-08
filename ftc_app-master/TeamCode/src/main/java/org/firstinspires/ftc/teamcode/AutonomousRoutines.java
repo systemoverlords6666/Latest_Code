@@ -10,14 +10,12 @@ abstract public class AutonomousRoutines extends LinearOpMode {
     DcMotor rm;
 
 
-    public void init_6666() {
+    public void init_6666(){
         lm = hardwareMap.dcMotor.get("lm");
         rm = hardwareMap.dcMotor.get("rm");
 
         lm.setDirection(DcMotor.Direction.REVERSE);
         waitForStart();
-
-
     }
 
 
