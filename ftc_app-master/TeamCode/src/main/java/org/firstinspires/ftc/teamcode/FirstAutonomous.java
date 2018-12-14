@@ -22,13 +22,17 @@ public class FirstAutonomous extends LinearOpMode {
         waitForStart();
 
         up.setPower(.4);
-        sleep(3000);
+        sleep(4250);
 
 
 
-        lm.setPower(.6);
-        rm.setPower(.6);
-        sleep(5000);
+        lm.setPower(.8);
+        rm.setPower(.8);
+        sleep(4500);
+
+        up.setPower(-.4);
+        sleep(2500);
+
 
 
 

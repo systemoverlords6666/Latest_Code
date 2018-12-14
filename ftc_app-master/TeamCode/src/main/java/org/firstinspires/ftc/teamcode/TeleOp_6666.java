@@ -5,8 +5,9 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
-@TeleOp(name = "TeleOp")
+@TeleOp(name = "TeleOp_")
 public class TeleOp_6666 extends OpMode{
 
 
@@ -14,10 +15,12 @@ public class TeleOp_6666 extends OpMode{
     DcMotor rm;
     DcMotor up;
 
+    Servo ps;
 
     double leftwheelpower;
     double rightwheelpower;
     double upmotor;
+    boolean pushservo;
 
 
     @Override
@@ -25,7 +28,7 @@ public class TeleOp_6666 extends OpMode{
         lm = hardwareMap.dcMotor.get("lm");
         rm = hardwareMap.dcMotor.get("rm");
         up = hardwareMap.dcMotor.get("up");
-
+        ps = hardwareMap.servo.get("ps");
 
 
 
@@ -37,12 +40,14 @@ public class TeleOp_6666 extends OpMode{
         leftwheelpower = gamepad1.left_stick_y;
         rightwheelpower = gamepad1.right_stick_y;
         upmotor = gamepad2.left_stick_y;
-
+        pushservo = gamepad2.a;
 
 
         lm.setPower(leftwheelpower);
         rm.setPower(rightwheelpower);
         up.setPower(upmotor);
+
+
 
     }
 

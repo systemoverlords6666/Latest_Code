@@ -58,7 +58,7 @@ public class    HardwarePushbot
     public DcMotor  up = null;
     public DcMotor  lm = null;
     public DcMotor  rm = null;
-
+    public Servo ps = null;
 
 
 
@@ -83,6 +83,7 @@ public class    HardwarePushbot
         up.setDirection(DcMotor.Direction.FORWARD);
         lm = hwMap.get(DcMotor.class,"lm");
         rm = hwMap.get(DcMotor.class, "rm");
+        ps = hwMap.get(Servo.class, "ps");
         // Set all motors to zero power
 
         up.setPower(0);
