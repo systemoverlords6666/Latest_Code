@@ -25,6 +25,9 @@ public class SensorColor extends LinearOpMode {
         ColorSensor color_Sensor;
         color_Sensor = hardwareMap.colorSensor.get("color_Sensor");
 
+        telemetry.addData("Status", "Ready to run");    //
+        telemetry.update();
+
         waitForStart();
 
         color_Sensor.red();     // Red color value
@@ -33,12 +36,19 @@ public class SensorColor extends LinearOpMode {
         color_Sensor.alpha();   // Total luminosity
         color_Sensor.argb();    // Combined color value
 
-        if (color_Sensor.blue()>200)
-        {
 
+
+        while(color_Sensor.blue()>200)
+        {
+            telemetry.addData("Status", "Deteced the color blue");    //
+            telemetry.update();
             lm.setPower(.8);
             rm.setPower(.8);
-            sleep(1000);
+            sleep(6000);
         }
+        sleep(6000);
+        telemetry.addData("Status", "Finished");    //
+        telemetry.update();
+
     }
 }
